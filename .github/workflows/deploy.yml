@@ -1,0 +1,27 @@
+name: Deploy master
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout source code
+      uses: actions/checkout@v2
+
+    - name: Generate deployment package
+      run: zip -r flask.zip . -x '*.git*'
+
+    - name: Deploy to EB
+      uses: einaregilsson/beanstalk-deploy@v18
+      with:
+        aws_access_key: ${{ AKIAV7QB45HD4WIQOUNO }}
+        aws_secret_key: ${{ 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 }}
+        application_name: flask-app
+        environment_name: Flaskapp-env-1
+        version_label: 12345
+        region: eu-central-1
+        deployment_package: flask.zip
