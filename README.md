@@ -1,2 +1,2 @@
 # mygitactions
-# I am Muhammad Yashl Ammar together
+# I am Muhammad Yashl Ammar
