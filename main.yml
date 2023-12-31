@@ -2,9 +2,9 @@
 company: spacelift
 domain:
  - devops
- - devsecOps
+ - devsecops
 tutorial:
   - yaml:
       name: "YAML Ain't Markup Language i Hope so"
-      type: Awesome
+      type: awesome
       born: 2001
